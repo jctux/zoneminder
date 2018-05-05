@@ -1,0 +1,47 @@
+---
+driver:
+  name: gce
+  project: <%= ENV['GCP_PROJECT'] %>
+  zone: <%= ENV['GCP_ZONE'] %>
+  email: <%= ENV['GCP_EMAIL'] %>
+  machine_type: n1-standard-1
+
+transport:
+  username: <%= ENV['GCP_USER'] %>
+  ssh_key: <%= ENV['GCP_SSH_KEY'] %>
+
+provisioner:
+  name: chef_zero
+
+verifier:
+  name: inspec
+
+platforms:
+
+- name: Windows_2012R2_12
+  driver_config:
+    image_project: windows-cloud
+    image_family: windows-2012-r2
+    disks:
+      disk0:
+        boot: true
+        disk_type: "pd-standard"
+        disk_size: 256
+  provisioner:
+    name: chef_zero
+
+suites:
+  - name: git
+    driver_config:
+      tags:
+        Suite: SE_2_0
+    run_list:
+      - recipe[litc-ucp-hostfileconfig::default]
+      - recipe[litc-git::default]
+    attributes:
+      "hostfile-config": {
+        "moo-repo": "10.156.0.4"
+        }
+    verifier:
+      inspec_tests:
+        - path: test/smoke/default

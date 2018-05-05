@@ -1,0 +1,52 @@
+{
+  "name": "zoneminder",
+  "description": "Installs zoneminder security camera software",
+  "long_description": "# zoneminder Cookbook\n\nInstalls and configures the package `zoneminder` on Debian/Ubuntu systems. Note that the zoneminder package will also install mysql and apache2 servers as a dependency.\n\nMonitors are stored in the database instead of conf files, so configuration is mostly manual.\n\n## Requirements\n\n### Platforms\n\n- Debian (requires jessie-backports or wheezy-backports repos to be enabled)\n- Ubuntu 12.04-16.04\n\n### Chef\n\n- Chef 11+\n\n### Cookbooks\n\n- apt\n\n## Usage\n\n### zoneminder::default\n\nInclude `zoneminder` in your node's `run_list`:\n\n```json\n{\n  \"name\":\"my_node\",\n  \"run_list\": [\n    \"recipe[zoneminder]\"\n  ]\n}\n```\n\n## Contributing\n\n1. Fork the repository on GitHub\n2. Create a named feature branch (like `add_component_x`)\n3. Write you change\n4. Write tests for your change (if applicable)\n5. Run the tests, ensuring they all pass\n6. Submit a Pull Request using GitHub\n\n## License and Authors\n\nAuthor:: Matt Ray [matt@getchef.com](mailto:matt@getchef.com)\n\nCopyright:: 2013-2014 Chef Software, Inc.\n\nLicensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License. You may obtain a copy of the License at\n\n```\nhttp://www.apache.org/licenses/LICENSE-2.0\n```\n\nUnless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.\n",
+  "maintainer": "Matt Ray",
+  "maintainer_email": "matt@chef.io",
+  "license": "Apache 2.0",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 0.0.0"
+  },
+  "dependencies": {
+    "apache2": ">= 0.0.0"
+  },
+  "recommendations": {
+
+  },
+  "suggestions": {
+
+  },
+  "conflicting": {
+
+  },
+  "providing": {
+
+  },
+  "replacing": {
+
+  },
+  "attributes": {
+
+  },
+  "groupings": {
+
+  },
+  "recipes": {
+
+  },
+  "version": "1.0.0",
+  "source_url": "https://github.com/mattray/zoneminder-cookbook",
+  "issues_url": "https://github.com/mattray/zoneminder-cookbook/issues",
+  "privacy": false,
+  "chef_versions": [
+
+  ],
+  "ohai_versions": [
+
+  ],
+  "gems": [
+
+  ]
+}
